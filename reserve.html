@@ -142,35 +142,38 @@
 
     <div class="container">
         <h2>Make a Reservation</h2>
+        <h2>Make a Reservation</h2>
         <form action="https://formspree.io/f/mvgogbzv" method="POST">
-            <label for="customer_name" title="Please enter your full name.">Name:</label>
-            <input type="text" id="customer_name" name="customer_name" required title="Your full name for the reservation.">
-
-            <label for="service" title="Choose the service you want to reserve.">Service:</label>
-            <select id="service" name="service" required title="Select the service you wish to reserve.">
+            <label for="customer_name">Name:</label>
+            <input type="text" id="customer_name" name="customer_name" required title="Please enter your full name">
+        
+            <label for="service">Service:</label>
+            <select id="service" name="service" required title="Choose your service">
                 <option value="Group Study Room">Group Study Room</option>
                 <option value="Console Room">Console Room</option>
-                <option value="Premium Study Cubicle">Premium Study Cubicle</option>
                 <option value="Gaming PC">Gaming PC</option>
+                <option value="Premium Study Cubicle">Premium Study Cubicle</option>
                 <option value="Study Cubicle">Study Cubicle</option>
             </select>
-
-            <label for="date" title="Select the date for your reservation.">Date:</label>
-            <input type="date" id="date" name="date" required title="Select the date you want to reserve.">
-
-            <label for="time" title="Select the time for your reservation.">Time:</label>
-            <input type="time" id="time" name="time" required title="Choose the start time of your reservation.">
-
-            <label for="duration" title="Enter how many hours you want to reserve.">Duration (in hours):</label>
-            <input type="number" id="duration" name="duration" required title="How long you want to reserve for">
-
-            <label for="phone" title="Please provide a valid phone number.">Phone Number:</label>
-            <input type="tel" id="phone" pattern="[0-9]{10}" name="phone" required title="Your phone number for contact purposes.">
-
-            <label for="email" title="Enter your email address.">Email:</label>
-            <input type="email" id="email" name="email" required title="Your email address to receive reservation confirmation.">
-
+        
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required title="Select the reservation date">
+        
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required title="Select the reservation time">
+        
+            <label for="duration">Duration (in hours):</label>
+            <input type="number" id="duration" name="duration" required title="Enter the duration in hours">
+        
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required title="Enter your phone number">
+        
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required title="Enter your email address">
+        
             <button type="submit">Reserve</button>
+
+            <input type="hidden" name="_next" value="https://justtreeisbored.github.io/error404lounge.github.io/submitted.html">
         </form>
     </div>
 
