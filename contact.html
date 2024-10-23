@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contact Us | Error 404</title>
+	<style type="text/css">
+		*{
+			text-decoration: none;
+		}
+		.navbar{
+			background: #021220; 
+			font-family: 'League Spartan'; 
+			margin-right: -8px;
+			margin-left: -8px;
+			margin-top: 0px;
+			position: fixed;
+			top: 0;
+            width: 100%;
+            z-index: 1000;
+			padding: 0 16px;
+		}
+		.navdiv{
+			display: flex; 
+			align-items: center; 
+			justify-content: center;
+		}
+		.logo a{
+			margin-right: 10px;
+		}
+		li{
+			list-style: none; 
+			display: inline-block;
+		}
+		li a{
+			color: white; font-size: 18px; 
+			font-weight: bold; 
+			margin-right: 25px;
+		}
+		ul {
+    		position: absolute; 
+    		right: 100px;
+    		margin: 0;
+		}
+		footer {
+            text-align: center;
+            padding: 3px;
+            background-color: #021220;
+            color: white;
+			font-family: calibri; 
+			margin-right: -8px;
+			margin-left: -8px;
+			margin-bottom: -8px;
+        }
+		.gaming {
+			margin-left: -8px;
+		}
+		@font-face {
+			font-family: League Spartan;
+			src: url(LeagueSpartan-VariableFont_wght.ttf);
+		}
+		body {
+            background-image: url('backround.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+		body, html {
+            margin: 0;
+            padding: 0;
+            height: 150%;
+            display: flex;
+            flex-direction: column;
+        }
+        article.gaming {
+            width: 1920px;
+            height: 1600px;
+            background-image: url('backround4.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+		main {
+            flex: 1;
+        }
+		footerlogo {
+			align-items: center; 
+		}
+		.body1 {
+            position: absolute;
+			align-items: center;
+			left: 50px;
+            top: 200px;
+            width: 526px; 
+            height: 513px;
+            z-index: 10;
+        }
+		.body2 {
+            position: absolute;
+			align-items: center;
+			left: 100px;
+            top: 700px;
+            width: 92px; 
+            height: 92px;
+            z-index: 10;
+        }
+        .reserve-button {
+            position: absolute; 
+            right: 1500px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .reserve {
+            list-style: none;
+        }
+        .reserve a {
+            display: block;
+            text-align: center;
+        }
+        .reserve-button img {
+            width: 222px;
+            height: 52px;
+        }
+	</style>
+</head>
+<body>
+	<nav class="navbar">
+		<div class="navdiv">
+            <ul class="reserve-button">
+                <li class="reserve">
+                    <a href="reserve.html"><img src="body3.png" alt="reserve button"></a>
+                </li>
+            </ul>
+			<div class="logo"><a href="home.html"><img src="logowhite.png" alt="logo" width="180" height="102" style="margin-top: 0px;"></a>
+			</div>
+			<ul>
+				<li><a href="home.html">Home</a></li>
+				<li><a href="aboutus.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<img src="contacterror404.png" alt="body1" class="body1">
+	<a href="https://www.facebook.com/profile.php?id=61567061141560" target="_blank">
+		<img src="fb.png" alt="fb" class="body2">
+	</a>
+	
+    <main>
+        <article class="gaming" id="gaming"></article>
+    </main>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var scrollPosition = window.pageYOffset;
+            document.getElementById('gaming').style.backgroundPositionY = scrollPosition * 0.8 + 'px';
+        });
+    </script>
+	<footer class="footerlogo">
+		<p><a ><img src="footer.png" alt="footer" width="195" height="87" style="float: left; margin-left: 150px; margin-top: -15px; padding-top: 10px; padding-bottom: 10px;"></a>
+	</p>
+	  </footer>
+</body>
+</html>

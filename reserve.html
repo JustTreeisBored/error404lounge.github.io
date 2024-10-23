@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation | Error 404 Gaming & Study Lounge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('reservebackround.png');
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background: #021220; 
+            font-family: 'League Spartan'; 
+            margin-right: -8px;
+            margin-left: -8px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 0 16px;
+        }
+        .navdiv {
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+        }
+        .logo a {
+            margin-right: 10px;
+        }
+        li {
+            list-style: none; 
+            display: inline-block;
+        }
+        li a {
+            color: white;
+            font-size: 18px;
+            font-weight: bold; 
+            margin-right: 25px;
+        }
+        ul {
+            position: absolute; 
+            right: 100px;
+            margin: 0;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #021220;
+            color: white;
+            font-family: calibri;
+            width: 100%;
+            box-sizing: border-box;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+        footer img {
+            max-width: 100%;
+            height: 87px;
+            width: 195px;
+        }
+        .container {
+            width: 80%;
+            margin: 150px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #021220;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select {
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input:hover, select:hover {
+            border-color: #021220;
+        }
+        input[title], select[title] {
+            cursor: pointer;
+        }
+        button {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #021220;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #033c5e;
+        }
+        .content {
+            height: 200vh;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        main {
+            flex: 1;
+        }
+        @font-face {
+            font-family: League Spartan;
+            src: url(LeagueSpartan-VariableFont_wght.ttf);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="home.html"><img src="logowhite.png" alt="logo" width="180" height="102" style="margin-top: 0px;"></a></div>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Make a Reservation</h2>
+        <form action="send-reservation.php" method="POST">
+            <label for="customer_name" title="Please enter your full name.">Name:</label>
+            <input type="text" id="customer_name" name="customer_name" required title="Your full name for the reservation.">
+
+            <label for="service" title="Choose the service you want to reserve.">Service:</label>
+            <select id="service" name="service" required title="Select the service you wish to reserve.">
+                <option value="Group Study Room">Group Study Room</option>
+                <option value="Console Room">Console Room</option>
+                <option value="Premium Study Cubicle">Premium Study Cubicle</option>
+                <option value="Gaming PC">Gaming PC</option>
+                <option value="Study Cubicle">Study Cubicle</option>
+            </select>
+
+            <label for="date" title="Select the date for your reservation.">Date:</label>
+            <input type="date" id="date" name="date" required title="Select the date you want to reserve.">
+
+            <label for="time" title="Select the time for your reservation.">Time:</label>
+            <input type="time" id="time" name="time" required title="Choose the start time of your reservation.">
+
+            <label for="duration" title="Enter how many hours you want to reserve.">Duration (in hours):</label>
+            <input type="number" id="duration" name="duration" required title="How long you want to reserve for">
+
+            <label for="phone" title="Please provide a valid phone number.">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required title="Your phone number for contact purposes.">
+
+            <label for="email" title="Enter your email address.">Email:</label>
+            <input type="email" id="email" name="email" required title="Your email address to receive reservation confirmation.">
+
+            <button type="submit">Reserve</button>
+        </form>
+    </div>
+
+    <main>
+        <article class="gaming" id="gaming"></article>
+    </main>
+
+    <footer>
+        <p><a><img src="footer.png" alt="footer" width="195" height="87" style="float: left; margin-left: 150px; margin-top: -15px; padding-top: 10px; padding-bottom: 10px;"></a></p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var scrollPosition = window.pageYOffset;
+            document.getElementById('gaming').style.backgroundPositionY = scrollPosition * 0.8 + 'px';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home | Error 404</title>
+	<style type="text/css">
+		*{
+			text-decoration: none;
+		}
+		.navbar{
+			background: #021220; 
+			font-family: 'League Spartan'; 
+			margin-right: -8px;
+			margin-left: -8px;
+			margin-top: 0px;
+			position: fixed;
+			top: 0;
+            width: 100%;
+            z-index: 1000;
+			padding: 0 16px;
+		}
+		.navdiv{
+			display: flex; 
+			align-items: center; 
+			justify-content: center;
+		}
+		.logo a{
+			margin-right: 10px;
+		}
+		li{
+			list-style: none; 
+			display: inline-block;
+		}
+		li a{
+			color: white; font-size: 18px; 
+			font-weight: bold; 
+			margin-right: 25px;
+		}
+		ul {
+    		position: absolute; 
+    		right: 100px;
+    		margin: 0;
+		}
+		footer {
+            text-align: center;
+            padding: 3px;
+            background-color: #021220;
+            color: white;
+			font-family: calibri; 
+			margin-right: -8px;
+			margin-left: -8px;
+			margin-bottom: -8px;
+        }
+		.gaming {
+			margin-left: -8px;
+		}
+		@font-face {
+			font-family: League Spartan;
+			src: url(LeagueSpartan-VariableFont_wght.ttf);
+		}
+		body {
+            background-image: url('backround3.png');
+			background-attachment: fixed;
+    		background-size: cover;
+   			background-repeat: no-repeat;
+    		background-position: center;
+		}
+		body, html {
+            margin: 0;
+            padding: 0;
+            height: 180%;
+            display: flex;
+            flex-direction: column;
+        }
+		article.gaming {
+    		width: 110%; 
+    		height: 2000px;
+    		background-image: url('backround3.png');
+    		background-size: cover;
+    		background-position: center;
+    		background-repeat: no-repeat;
+    		position: relative;
+    		z-index: -1; 
+		}
+		.content {
+    		height: 200vh;
+    		padding: 20px;
+    		font-family: Arial, sans-serif;
+    		color: white;
+		}
+		main {
+            flex: 1;
+        }
+		footerlogo {
+			align-items: center; 
+		}
+		.body2 {
+            position: absolute;
+			align-items: center;
+			left: 50%;
+            transform: translateX(-50%);
+            top: 200px;
+            width: 1379px; 
+            height: 245px;
+            z-index: 10;
+        }
+		.body1 {
+            position: absolute;
+			align-items: center;
+			left: 50%;
+            transform: translateX(-50%);
+            top: 900px;
+            width: 1331px; 
+            height: 792px;
+            z-index: 10;
+        }
+		.body3 {
+            position: absolute;
+			align-items: center;
+			left: 50%;
+            transform: translateX(-50%);
+            top: 500px;
+            width: 390px; 
+            height: 91px;
+            z-index: 10;
+        }
+	</style>
+</head>
+<body>
+	<nav class="navbar">
+		<div class="navdiv">
+			<div class="logo"><a href="home.html"><img src="logowhite.png" alt="logo" width="180" height="102" style="margin-top: 0px;">
+			</a>
+			</div>
+			<ul>
+				<li><a href="home.html">Home</a></li>
+				<li><a href="aboutus.html">About</a></li>
+				<li><a href="contact2.html">Contact Us</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<img src="body2.png" alt="name" class="body2">
+	<img src="body1.png" alt="offers" class="body1">
+	<a href="reserve.html"><img src="body3.png" alt="reserve button" class="body3"></a>
+	
+    <main>
+        <article class="gaming" id="gaming"></article>
+    </main>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var scrollPosition = window.pageYOffset;
+            document.getElementById('gaming').style.backgroundPositionY = scrollPosition * 0.8 + 'px';
+        });
+    </script>
+	<footer class="footerlogo">
+		<p><a ><img src="footer.png" alt="footer" width="195" height="87" style="float: left; margin-left: 150px; margin-top: -15px; padding-top: 10px; padding-bottom: 10px;"></a>
+	</p>
+	  </footer>
+
+	  <script>
+		window.addEventListener('scroll', function() {
+			const gamingSection = document.querySelector('.gaming');
+			let scrollPosition = window.pageYOffset;
+			gamingSection.style.backgroundPositionY = (scrollPosition * 0.5) + 'px';
+		});
+	</script>
+
+</body>
+</html>
