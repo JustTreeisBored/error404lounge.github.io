@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Home | Error 404</title>
 	<style type="text/css">
-		*{
+		* {
 			text-decoration: none;
 		}
-		.navbar{
+		.navbar {
 			background: #021220; 
 			font-family: 'League Spartan'; 
 			margin-right: -8px;
@@ -20,20 +20,21 @@
             z-index: 1000;
 			padding: 0 16px;
 		}
-		.navdiv{
+		.navdiv {
 			display: flex; 
 			align-items: center; 
 			justify-content: center;
 		}
-		.logo a{
+		.logo a {
 			margin-right: 10px;
 		}
-		li{
+		li {
 			list-style: none; 
 			display: inline-block;
 		}
-		li a{
-			color: white; font-size: 18px; 
+		li a {
+			color: white; 
+			font-size: 18px; 
 			font-weight: bold; 
 			margin-right: 25px;
 		}
@@ -125,14 +126,53 @@
             height: 91px;
             z-index: 10;
         }
+
+
+		@media only screen and (max-width: 768px) {
+			.navbar ul {
+				right: 0;
+				text-align: center;
+				margin: 0;
+			}
+			li a {
+				display: block;
+				padding: 10px 0;
+			}
+			.body2, .body1, .body3 {
+				width: 90%;
+				height: auto;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			.body2 {
+				top: 150px;
+			}
+			.body1 {
+				top: 600px;
+			}
+			.body3 {
+				top: 350px;
+			}
+		}
+
+		@media only screen and (max-width: 480px) {
+			.body2, .body1, .body3 {
+				width: 100%;
+				left: 0;
+				transform: none;
+			}
+			.navbar ul {
+				display: flex;
+				flex-direction: column;
+				text-align: center;
+			}
+		}
 	</style>
 </head>
 <body>
 	<nav class="navbar">
 		<div class="navdiv">
-			<div class="logo"><a href="index.html"><img src="logowhite.png" alt="logo" width="180" height="102" style="margin-top: 0px;">
-			</a>
-			</div>
+			<div class="logo"><a href="index.html"><img src="logowhite.png" alt="logo" width="180" height="102"></a></div>
 			<ul>
 				<li><a href="index.html">Home</a></li>
 				<li><a href="aboutus.html">About</a></li>
@@ -144,7 +184,7 @@
 	<img src="body2.png" alt="name" class="body2">
 	<img src="body1.png" alt="offers" class="body1">
 	<a href="reserve.html"><img src="body3.png" alt="reserve button" class="body3"></a>
-	
+
     <main>
         <article class="gaming" id="gaming"></article>
     </main>
@@ -156,11 +196,10 @@
         });
     </script>
 	<footer class="footerlogo">
-		<p><a ><img src="footer.png" alt="footer" width="195" height="87" style="float: left; margin-left: 150px; margin-top: -15px; padding-top: 10px; padding-bottom: 10px;"></a>
-	</p>
-	  </footer>
+		<p><a><img src="footer.png" alt="footer" width="195" height="87"></a></p>
+	</footer>
 
-	  <script>
+	<script>
 		window.addEventListener('scroll', function() {
 			const gamingSection = document.querySelector('.gaming');
 			let scrollPosition = window.pageYOffset;
