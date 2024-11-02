@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('reservebackround.png');
+            background-image: url('reservebackground.png');
             background-attachment: fixed;
             background-size: cover;
             background-repeat: no-repeat;
@@ -16,10 +16,9 @@
             padding: 0;
         }
         .navbar {
-            background: #021220; 
-            font-family: 'League Spartan'; 
-            margin-right: -8px;
-            margin-left: -8px;
+            background: #021220;
+            font-family: 'League Spartan';
+            margin: 0 -8px;
             position: fixed;
             top: 0;
             width: 100%;
@@ -27,34 +26,38 @@
             padding: 0 16px;
         }
         .navdiv {
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
         }
-        .logo a {
-            margin-right: 10px;
-        }
-        li {
-            list-style: none; 
-            display: inline-block;
-        }
-        li a {
-            color: white;
-            font-size: 18px;
-            font-weight: bold; 
-            margin-right: 25px;
+        .logo img {
+            margin: 0 10px;
+            width: 180px;
+            height: 102px;
         }
         ul {
-            position: absolute; 
-            right: 100px;
+            list-style: none;
             margin: 0;
+            display: flex;
+            gap: 25px;
+        }
+        ul li a {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        ul li a:hover {
+            text-decoration: underline;
         }
         footer {
             text-align: center;
-            padding: 20px 0;
+            padding: 20px;
             background-color: #021220;
             color: white;
-            font-family: calibri;
+            font-family: Calibri, sans-serif;
             width: 100%;
             box-sizing: border-box;
             position: fixed;
@@ -67,12 +70,13 @@
             width: 195px;
         }
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 800px;
             margin: 150px auto;
             background-color: white;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h2 {
             text-align: center;
@@ -81,26 +85,22 @@
         form {
             display: flex;
             flex-direction: column;
+            gap: 15px;
         }
         label {
-            margin-top: 10px;
             font-weight: bold;
         }
         input, select {
             padding: 10px;
-            margin-top: 5px;
             font-size: 16px;
             border-radius: 5px;
             border: 1px solid #ccc;
         }
-        input:hover, select:hover {
+        input:focus, select:focus {
             border-color: #021220;
-        }
-        input[title], select[title] {
-            cursor: pointer;
+            outline: none;
         }
         button {
-            margin-top: 20px;
             padding: 15px;
             background-color: #021220;
             color: white;
@@ -112,18 +112,24 @@
         button:hover {
             background-color: #033c5e;
         }
-        .content {
-            height: 200vh;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-            color: white;
-        }
-        main {
-            flex: 1;
-        }
         @font-face {
-            font-family: League Spartan;
-            src: url(LeagueSpartan-VariableFont_wght.ttf);
+            font-family: 'League Spartan';
+            src: url('LeagueSpartan-VariableFont_wght.ttf');
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+            .navdiv {
+                flex-direction: column;
+            }
+            ul {
+                gap: 15px;
+            }
+            footer p {
+                margin: 0;
+            }
         }
     </style>
 </head>
@@ -131,7 +137,7 @@
 
     <nav class="navbar">
         <div class="navdiv">
-            <div class="logo"><a href="index.html"><img src="logowhite.png" alt="logo" width="180" height="102" style="margin-top: 0px;"></a></div>
+            <div class="logo"><a href="index.html"><img src="logowhite.png" alt="logo"></a></div>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="aboutus.html">About</a></li>
@@ -156,16 +162,16 @@
             </select>
         
             <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required title="Select the reservation date">
+            <input type="date" id="date" name="date" required title="Select the reservation date" min="<?php echo date('Y-m-d'); ?>">
         
             <label for="time">Time:</label>
             <input type="time" id="time" name="time" required title="Select the reservation time">
         
             <label for="duration">Duration (in hours):</label>
-            <input type="number" id="duration" name="duration" required title="Enter the duration in hours">
+            <input type="number" id="duration" name="duration" required title="Enter the duration in hours" min="1">
         
             <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required title="Enter your phone number">
+            <input type="tel" id="phone" name="phone" required title="Enter your phone number" pattern="[0-9]{4}[0-9]{3}[0-9]{4}" placeholder="09051234567">
         
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required title="Enter your email address">
@@ -176,12 +182,8 @@
         </form>
     </div>
 
-    <main>
-        <article class="gaming" id="gaming"></article>
-    </main>
-
     <footer>
-        <p><a><img src="footer.png" alt="footer" width="195" height="87" style="float: left; margin-left: 150px; margin-top: -15px; padding-top: 10px; padding-bottom: 10px;"></a></p>
+        <p><a href="#"><img src="footer.png" alt="footer"></a></p>
     </footer>
 
     <script>
