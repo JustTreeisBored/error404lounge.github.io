@@ -33,8 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587; 
 
-        $mail->setFrom('error404gandsl@gmail.com', 'Error 404 Gaming & Study Lounge');
-        $mail->addAddress('error404gandsl@gmail.com');
+        $mail->setFrom('thomasyoan303@gmail.com', 'Error 404 Gaming & Study Lounge');
+        $mail->addAddress('thomasyoan303@gmail.com');
 
 
         $mail->isHTML(true);
